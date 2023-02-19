@@ -27,7 +27,7 @@ export class CategorieService {
 
   supprimerCategorie(cat : Categorie){
     let id = cat.idCategorie;
-    this.http.delete(`${this.apiUrl}/supprimerCategorie/${id}`);
+    return this.http.delete(`${this.apiUrl}/supprimerCategorie/${id}`);
   }
 
   modifierCategorie(cat : Categorie):Observable<Categorie>{

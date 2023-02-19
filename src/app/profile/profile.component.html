@@ -1,0 +1,119 @@
+<div class="main-content">
+    <div class="page-content">
+      <div class="container-fluid">
+<div class="card">
+    <div class="card-body">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Information personnel</h4>
+            <button class="btn btn-primary" (click)="open(content)"><i class="fa fa-pencil-alt"></i> | Modifier</button>
+          </div>
+        <div class="table-responsive">
+            <table class="table table-nowrap mb-0">
+                <tbody>
+                    <tr>
+                        <th scope="row">Nom :</th>
+                        <td>Cynthia Price</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Prénom :</th>
+                        <td>Henry</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">E-mail :</th>
+                        <td>cynthiaskote@gmail.com</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<ng-template #content let-c="close" let-d="dismiss" id="modal">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Modifier profile</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form class="custom-validation" action="#">
+        <div class="mb-3">
+          <label class="form-label">Nom</label>
+          <input
+            type="text"
+            class="form-control"
+            required
+            placeholder="Taper votre nom"
+
+            name="nom"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">prenom</label>
+          <input
+            type="text"
+            class="form-control"
+            required
+            placeholder="Taper votre prenom"
+            
+            name="prenom"
+          />
+        </div>
+       
+        <div class="mb-3">
+          <label class="form-label">E-Mail</label>
+          <div>
+            <input
+              type="email"
+              class="form-control"
+              required
+              parsley-type="email"
+              
+              name="email"
+              placeholder="Taper votre email"
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Ancien mot de passe</label>
+          <div>
+            <input
+              type="password"
+              id="pass2"
+              class="form-control"
+              required
+              placeholder="Taper votre ancien mot de passe"
+            />
+          </div>
+         
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nouveau mot de passe</label>
+            <div>
+              <input
+                type="password"
+                id="pass2"
+                class="form-control"
+                required
+                placeholder="Taper votre nouveau mot de passe"
+              />
+            </div>
+           
+          </div>
+        
+      </form>
+    </div>
+    <div class="modal-footer">
+      <div class="d-flex flex-wrap gap-2">
+        <button
+          
+          type="button"
+          class="btn btn-primary waves-effect waves-light"
+          data-dismiss="content"
+          #my_button>
+          Sauvegardez
+        </button>
+      </div>
+    </div>
+  </ng-template>
+</div>
+</div>
+</div>

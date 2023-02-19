@@ -1,0 +1,109 @@
+<div class="main-content">
+    <div class="page-content">
+          <div class="container-fluid">
+        <!-- start page title -->
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+              <h4 class="mb-sm-0 font-size-18">Liste des annonces</h4>
+              <a routerLink="/#"><button class="btn btn-success"><i class="fa fa-plus"></i> | Ajouter</button></a>
+            </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-xl-9">
+                  <div class="card">
+                <div class="card-body">
+                  
+  
+                  <div class="table-responsive">
+                    <table class="table mb-0">
+                      <thead>
+                        <tr>
+                          <th>Titre</th>
+                          <th>Ville</th>
+                          <th>Addresse</th>
+                          <th>Discription</th>
+                          <th>Date</th>
+                          <th>Opérations</th>
+                        </tr>
+                      </thead>
+                      <tbody >
+                        <tr>
+                          <td>montre</td>
+                          <td>el mida</td>
+                          <td>nabeul,el mida, centre</td>
+                          <td>une montre gris pour homme</td>
+                          <td>01/02/2023 12:15</td>
+                          <td class="d-flex flex-wrap gap-2">
+                            <button (click)="open(content)" class="btn btn-outline-secondary btn-sm" >
+                              <i class="fas fa-image"></i>
+                          </button>
+                          <button (click)="open(info)" class="btn btn-outline-secondary btn-sm" >
+                            <i class="fas fa-user"></i>
+                        </button>
+                          <button  class="btn btn-outline-secondary btn-sm" >
+                              <i class="fas fa-duotone fa-trash"></i>
+                          </button>
+                          </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ng-template #content let-c="close" let-d="dismiss" id="modal">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Image de l'objet</h4>
+              <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+              <img style="height: 100%; width: 100%;" img src="../assets/images/crypto/blog/img-1.jpg" alt="" srcset="">
+            </div>
+            <div class="modal-footer">
+              <div class="d-flex flex-wrap gap-2">
+                <button
+                  (click)="close()"
+                  type="button"
+                  class="btn btn-primary waves-effect waves-light">
+                  Fermer
+                </button>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #info let-c="close" let-d="dismiss" id="modal">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Utilisateur qui publié cette annonce</h4>
+              <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+                <dl class="dl-horizontal">
+                    <dt>Nom</dt>
+                    <dd>bissa</dd>
+                    <dt>Prenom</dt>
+                    <dd>seif eddine</dd>
+                    <dt>Email</dt>
+                    <dd>Seifedinebissa@gmail.com</dd>
+                    <dt>Addresse</dt>
+                    <dd>EL mida, Nabeul</dd>
+                    <dt>Téléphone</dt>
+                    <dd>24226861</dd>
+                  </dl>
+            </div>
+            <div class="modal-footer">
+              <div class="d-flex flex-wrap gap-2">
+                <button
+                  (click)="close()"
+                  type="button"
+                  class="btn btn-primary waves-effect waves-light">
+                  Fermer
+                </button>
+              </div>
+            </div>
+          </ng-template>
+      </div>
+    </div>
+  </div>
+  

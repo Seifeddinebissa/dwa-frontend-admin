@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CategorieService } from './../services/categorie.service';
 import { Categorie } from './../model/categorie.model';
 import { Component } from '@angular/core';
@@ -9,14 +10,14 @@ import { Component } from '@angular/core';
 })
 export class AjouterCategorieComponent {
 
-  constructor(private categorieService : CategorieService){}
+  constructor(private categorieService : CategorieService, private router:Router){}
 
   cat = new Categorie();
 
   ajouterCategorie(){
     this.categorieService.ajouterCategorie(this.cat).subscribe(c => {
       console.log(c);
-      
+      this.router.navigate(["/listeCategorie"]);
     });
   }
 }

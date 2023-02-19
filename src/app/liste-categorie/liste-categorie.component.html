@@ -21,16 +21,16 @@
                       <thead>
                         <tr>
                           <th>Titre</th>
-                          <th>Opérations</th>
+                          <th style="text-align: center;">Opérations</th>
                         </tr>
                       </thead>
-                      <tbody >
+                      <tbody *ngFor="let cat of categories">
                         <tr>
-                          <td>seif</td>
-                          <td class="d-flex flex-wrap gap-2 text-left"><button  class="btn btn-outline-secondary btn-sm" >
+                          <td>{{cat.titre}}</td>
+                          <td class="d-flex flex-wrap gap-2"><button (click)="open(content,cat)"  style="margin-left: 42%;" class="btn btn-outline-secondary btn-sm" >
                               <i class="fas fa-pencil-alt"></i>
                           </button>
-                          <button  class="btn btn-outline-secondary btn-sm" >
+                          <button (click)="supprimerCategorie(cat)" class="btn btn-outline-secondary btn-sm" >
                               <i class="fas fa-duotone fa-trash"></i>
                           </button>
                           </td>
@@ -56,7 +56,7 @@
                     class="form-control"
                     required
                     placeholder="Taper votre nom"
-                    
+                    [(ngModel)]="cat.titre"
                     name="nom"
                   />
                 </div>                
@@ -65,7 +65,7 @@
             <div class="modal-footer">
               <div class="d-flex flex-wrap gap-2">
                 <button
-                  
+                  (click)="modifierCategorie()"
                   type="button"
                   class="btn btn-primary waves-effect waves-light"
                   data-dismiss="content"
